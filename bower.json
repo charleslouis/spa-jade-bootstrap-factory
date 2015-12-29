@@ -1,12 +1,13 @@
 {
-  "name": "escapade",
-  "description": "escapade packages json",
+  "name": "spa-jade-bootstrap-factory",
+  "description": "spa jade bootstrap",
   "main": "",
   "authors": [
-    "Charles-Louis Allizard"
+    "Charles-Louis Allizard",
+    "krischamp"
   ],
-  "license": "MIT",
-  "homepage": "https://github.com/charleslouis/escapade",
+  "license": "",
+  "homepage": "https://github.com/charleslouis/spa-jade-bootstrap-factory",
   "moduleType": [],
   "ignore": [
     "**/.*",
@@ -20,7 +21,6 @@
     "bootstrap-sass": "~3.3.5"
   },
   "dependencies": {
-    "video.js": "~5.1.0",
     "font-awesome": "FortAwesome/Font-Awesome#~4.5.0"
   }
 }
