@@ -1,0 +1,46 @@
+.videoWrapper {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+	margin: 30px 0;
+	height: 0;
+	cursor: pointer;
+}
+.videoWrapper iframe {
+	z-index: 1;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.video-poster {
+	position: absolute;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-image: url('../media/img/cover-video-portlamer.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	background-size: cover;
+			
+}
+
+.video-button-play {
+	position: absolute;
+	z-index: 3;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-image: url('../media/img/button-play-video.png');
+	background-position: center;
+	background-repeat: no-repeat;
+	-webkit-background-size: 15%;
+	-moz-background-size: 15%;
+	background-size: 15%;
+}

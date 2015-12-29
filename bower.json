@@ -1,0 +1,26 @@
+{
+  "name": "escapade",
+  "description": "escapade packages json",
+  "main": "",
+  "authors": [
+    "Charles-Louis Allizard"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/charleslouis/escapade",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "animate.css": "animate-css#~3.4.0",
+    "bootstrap-sass": "~3.3.5"
+  },
+  "dependencies": {
+    "video.js": "~5.1.0",
+    "font-awesome": "FortAwesome/Font-Awesome#~4.5.0"
+  }
+}
