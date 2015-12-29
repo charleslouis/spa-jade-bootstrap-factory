@@ -17,10 +17,9 @@
     "tests"
   ],
   "devDependencies": {
-    "animate.css": "animate-css#~3.4.0",
     "bootstrap-sass": "~3.3.5"
   },
   "dependencies": {
-    "font-awesome": "FortAwesome/Font-Awesome#~4.5.0"
+
   }
 }
