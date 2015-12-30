@@ -1,0 +1,32 @@
+//- default structure page
+
+doctype html
+html
+
+	//- HTML HEADER
+	head
+		include head
+
+	//- HTML BODY
+	body
+
+		//- HEADER
+		include header
+
+		//- BODY
+		.main
+
+			//- The intro block should contain the intro of your template
+			.container: .row: .columns.medium-8.medium-offset-2
+				block intro	
+
+			//- The content block should contain the body of your template
+			.container: .row
+				.columns.medium-8.medium-offset-2
+					block content
+
+		//- FOOTER
+		include footer
+
+		//- JAVASCRIPT
+		include footer-scripts
