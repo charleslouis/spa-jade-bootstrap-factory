@@ -8,22 +8,17 @@ html
 		include head
 
 	//- HTML BODY
-	body
+	body.index
 
 		//- HEADER
 		include header
 
-		//- BODY
-		.main
+		//- The intro block should contain the intro of your template
+		block intro
 
-			//- The intro block should contain the intro of your template
-			.container: .row: .columns.medium-8.medium-offset-2
-				block intro	
+		//- The content block should contain the body of your templat
+		block content
 
-			//- The content block should contain the body of your template
-			.container: .row
-				.columns.medium-8.medium-offset-2
-					block content
 
 		//- FOOTER
 		include footer

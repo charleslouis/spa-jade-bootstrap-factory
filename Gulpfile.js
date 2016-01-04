@@ -13,8 +13,8 @@ var sass = require('gulp-sass'),
     watch = require('gulp-watch'),
     livereload = require('gulp-livereload'),
     del = require('del'),
-    // autoprefixer = require('gulp-autoprefixer'),
-    // rename = require('gulp-rename'),
+    autoprefixer = require('gulp-autoprefixer'),
+    rename = require('gulp-rename'),
     connect = require('gulp-connect');
 
     
