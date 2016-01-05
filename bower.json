@@ -20,6 +20,7 @@
     "bootstrap-sass": "~3.3.5"
   },
   "dependencies": {
-
+    "sass-bootstrap-glyphicons": "~1.0.0",
+    "font-awesome": "fontawesome#~4.5.0"
   }
 }

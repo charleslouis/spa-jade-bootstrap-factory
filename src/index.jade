@@ -7,122 +7,22 @@ block intro
 			.intro-text
 				.intro-lead-in Welcome To ...
 				.intro-heading SPA JB Factory!
-				a.page-scroll.btn.btn-xl(href='#services') Tell Me More
+				a.page-scroll.btn.btn-primary.btn-xl(href='#services') Tell Me More
 
 
 block content
 
-	//- Services
-	section#services
-		.container
-			.row
-				.col-lg-12.text-center
-					h2.section-heading Services
-					h3.section-subheading.text-muted Intro Services
-			.row.text-center
-				.col-md-4
-					span.fa-stack.fa-4x
-						i.fa.fa-circle.fa-stack-2x.text-primary
-						i.fa.fa-shopping-cart.fa-stack-1x.fa-inverse
-					h4.service-heading First
-					p.text-muted
-						| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.
-				.col-md-4
-					span.fa-stack.fa-4x
-						i.fa.fa-circle.fa-stack-2x.text-primary
-						i.fa.fa-laptop.fa-stack-1x.fa-inverse
-					h4.service-heading Second
-					p.text-muted
-						| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.
-				.col-md-4
-					span.fa-stack.fa-4x
-						i.fa.fa-circle.fa-stack-2x.text-primary
-						i.fa.fa-lock.fa-stack-1x.fa-inverse
-					h4.service-heading Third
-					p.text-muted
-						| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.
+	//- //- Services (services)
+	include content-partial-jade/section-services
 
-	//- Presentation
-	section#about
-		.container
-			.row
-				.col-lg-12.text-center
-					h2.section-heading About
-					h3.section-subheading.text-muted Lorem ipsum dolor sit amet consectetur.
-			.row
-				.col-lg-12
-					ul.timeline
-						li
-							.timeline-image
-								img.img-circle.img-responsive(src='../media/img/about/1.jpg', alt='')
-							.timeline-panel
-								.timeline-heading
-									h4 2009-2011
-									h4.subheading Our Humble Beginnings
-								.timeline-body
-									p.text-muted
-										| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
-						li.timeline-inverted
-							.timeline-image
-								img.img-circle.img-responsive(src='../media/img/about/2.jpg', alt='')
-							.timeline-panel
-								.timeline-heading
-									h4 March 2011
-									h4.subheading An Agency is Born
-								.timeline-body
-									p.text-muted
-										| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
+	//- Presentation (about)
+	include content-partial-jade/section-about
 
-	//- Qui sommes nous?
-	section#team.bg-light-gray
-		.container
-			.row
-				.col-lg-12.text-center
-					h2.section-heading Our Amazing Team
-					h3.section-subheading.text-muted Lorem ipsum dolor sit amet consectetur.
-			.row
-				.col-sm-4
-					.team-member
-						img.img-responsive.img-circle(src='../media/img/team/1.jpg', alt='')
-						h4 Kay Garland
-						p.text-muted Lead Designer
-						ul.list-inline.social-buttons
-						li
-							a(href='#')
-								i.fa.fa-twitter
-						li
-							a(href='#')
-								i.fa.fa-facebook
-						li
-							a(href='#')
-								i.fa.fa-linkedin
+	//- Portfolio Grid Section
+	include content-partial-jade/section-portfolio
 
-	//- Contact Section
-	section#contact
-		.container
-			.row
-				.col-lg-12.text-center
-					h2.section-heading Contact Us
-					h3.section-subheading.text-muted Lorem ipsum dolor sit amet consectetur.
-			.row
-				.col-lg-12
-					form#contactForm(name='sentMessage', novalidate='')
-						.row
-							.col-md-6
-								.form-group
-									input#name.form-control(type='text', placeholder='Your Name *', required='', data-validation-required-message='Please enter your name.')
-									p.help-block.text-danger
-								.form-group
-									input#email.form-control(type='email', placeholder='Your Email *', required='', data-validation-required-message='Please enter your email address.')
-									p.help-block.text-danger
-								.form-group
-									input#phone.form-control(type='tel', placeholder='Your Phone *', required='', data-validation-required-message='Please enter your phone number.')
-									p.help-block.text-danger
-							.col-md-6
-								.form-group
-									textarea#message.form-control(placeholder='Your Message *', required='', data-validation-required-message='Please enter a message.')
-									p.help-block.text-danger
-							.clearfix
-							.col-lg-12.text-center
-								#success
-								button.btn.btn-xl(type='submit') Send Message
+	//- Qui sommes nous? (team)
+	include content-partial-jade/section-team
+
+	//- Contact Section (contact)
+	include content-partial-jade/section-contact
