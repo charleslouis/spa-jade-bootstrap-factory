@@ -24,9 +24,10 @@ var paths = {
   /* js files */
   'js': {
     input: [
-      './bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
       './bower_components/jquery/dist/jquery.js',
-      './src/js/vendor/*.js',
+      './bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
+      './bower_components/jquery.easing/js/jquery.easing.js',
+      './src/js/vendors/*.js',
       './src/js/custom/*.js',
     ],
     output: {
