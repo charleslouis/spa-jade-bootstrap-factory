@@ -23,11 +23,11 @@ var sass = require('gulp-sass'),
 var paths = {
   /* js files */
   'js': {
-    inSrc: [
-      // './bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
-      // './bower_components/jquery/dist/jquery.js',
-      './src/js/vendors/*.js',
-      './src/js/custom/*.js'
+    input: [
+      './bower_components/bootstrap-sass/assets/javascripts/bootstrap.js',
+      './bower_components/jquery/dist/jquery.js',
+      './src/js/vendor/*.js',
+      './src/js/custom/*.js',
     ],
     output: {
       file: 'scripts.js',
@@ -36,7 +36,7 @@ var paths = {
   },
   /* style scss */
   'scss': {
-    inSrc: ['./src/styles/**/*.scss'],
+    input: ['./src/styles/**/*.scss', './src/styles/font-awesome/scss/*.scss'],
     output: {
       folder: './src/styles/'
     }
@@ -69,7 +69,7 @@ gulp.task('server:start', function() {
 // ----------   SASS   -----
 /* sass DEV */
 gulp.task('sass:dev', function () {
-  gulp.src(paths.scss.inSrc)
+  gulp.src(paths.scss.input)
 	.pipe(sourcemaps.init())
 	.pipe(sass())
   .pipe(gulp.dest(paths.scss.output.folder))
@@ -79,7 +79,7 @@ gulp.task('sass:dev', function () {
  
 /* sass BUILD */
 gulp.task('sass:build',function () {
-  gulp.src(paths.scss.inSrc)
+  gulp.src(paths.scss.input)
     .pipe(sass())
     .pipe(sass.sync().on('error', sass.logError))
     .pipe(minifycss())
@@ -90,7 +90,7 @@ gulp.task('sass:build',function () {
 // ----------   JSCONCAT   -----
 /*  js scripts concatenation DEV */
 gulp.task('jsconcat:dev', function() {
-  return gulp.src(paths.js.inSrc)
+  return gulp.src(paths.js.input)
     .pipe(concat(paths.js.output.file))
     .pipe(gulp.dest(paths.js.output.folder))
     .pipe(livereload());
@@ -98,7 +98,7 @@ gulp.task('jsconcat:dev', function() {
 
 /* js scripts concatenation BUILD */
 gulp.task('jsconcat:build', function() {
-  return gulp.src(paths.js.inSrc)
+  return gulp.src(paths.js.input)
     .pipe(concat(paths.js.output.file))
     .pipe(uglify())
     .pipe(gulp.dest(paths.js.output.folder));
@@ -128,13 +128,13 @@ gulp.task('watch', [
 /* SASS */
 gulp.task('watch:sass', function () {
   livereload.listen();
-  gulp.watch(paths.scss.inSrc, ['sass:dev']);
+  gulp.watch(paths.scss.input, ['sass:dev']);
 });
 
 /* JS */
 gulp.task('watch:js', function () {
   livereload.listen();
-  gulp.watch(paths.js.inSrc, ['jsconcat:dev']);
+  gulp.watch(paths.js.input, ['jsconcat:dev']);
 });
 
 /* JADE -> HTML */
