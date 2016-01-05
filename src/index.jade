@@ -64,7 +64,7 @@ block content
 										| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!
 						li.timeline-inverted
 							.timeline-image
-								 img.img-circle.img-responsive(src='../media/img/about/2.jpg', alt='')
+								12img.img-circle.img-responsive(src='../media/img/about/2.jpg', alt='')
 							.timeline-panel
 								.timeline-heading
 									h4 March 2011
@@ -96,3 +96,33 @@ block content
 						li
 							a(href='#')
 								i.fa.fa-linkedin
+
+	//- Contact Section
+	section#contact
+		.container
+			.row
+				.col-lg-12.text-center
+					h2.section-heading Contact Us
+					h3.section-subheading.text-muted Lorem ipsum dolor sit amet consectetur.
+			.row
+				.col-lg-12
+					form#contactForm(name='sentMessage', novalidate='')
+						.row
+							.col-md-6
+								.form-group
+									input#name.form-control(type='text', placeholder='Your Name *', required='', data-validation-required-message='Please enter your name.')
+									p.help-block.text-danger
+								.form-group
+									input#email.form-control(type='email', placeholder='Your Email *', required='', data-validation-required-message='Please enter your email address.')
+									p.help-block.text-danger
+								.form-group
+									input#phone.form-control(type='tel', placeholder='Your Phone *', required='', data-validation-required-message='Please enter your phone number.')
+									p.help-block.text-danger
+							.col-md-6
+								.form-group
+									textarea#message.form-control(placeholder='Your Message *', required='', data-validation-required-message='Please enter a message.')
+									p.help-block.text-danger
+							.clearfix
+							.col-lg-12.text-center
+								#success
+								button.btn.btn-xl(type='submit') Send Message
