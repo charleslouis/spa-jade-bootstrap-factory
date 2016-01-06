@@ -17,6 +17,19 @@ var sass = require('gulp-sass'),
     rename = require('gulp-rename'),
     connect = require('gulp-connect');
 
+/* imagemin bundles 4 optimizers for compression 
+*  (https://github.com/sindresorhus/gulp-imagemin)
+*     gifsicle --> GIF images
+*     jpegtran --> JPEG images
+*     optipng  --> PNG images
+*     svgo     --> SVG images
+* We will use another PNG optimizer --> pngquant with special options for quality
+* (https://www.npmjs.com/package/imagemin-pngquant)
+*/ 
+var imagemin = require('gulp-imagemin'),
+    pngquant = require('imagemin-pngquant');
+
+
     
 // -------------   PATHS   ------------------
 // 
@@ -71,8 +84,8 @@ gulp.task('server:start', function() {
 /* sass DEV */
 gulp.task('sass:dev', function () {
   gulp.src(paths.scss.input)
-	.pipe(sourcemaps.init())
-	.pipe(sass())
+  .pipe(sourcemaps.init())
+  .pipe(sass())
   .pipe(gulp.dest(paths.scss.output.folder))
   .pipe(sass.sync().on('error', sass.logError))
   .pipe(livereload());
@@ -156,17 +169,30 @@ gulp.task('cleaning', function () {
 });
 
 
+//-----------   IMAGEMIN   ---------------------
+
+gulp.task('imagemin', function() {
+    return gulp.src([
+            './src/**/*.png',
+            './src/**/*.jpg',
+            './src/**/*.svg',
+            ])
+          .pipe(imagemin({
+              progressive: true,
+              svgoPlugins: [{removeViewBox: false}],
+              use: [pngquant({quality: '65-80', speed: 4})]
+          }))
+          .pipe(gulp.dest('./dist'));
+});
+
+
 //-----------   COPY   ---------------------
 /*  generate a new distribution version */
-gulp.task('copy', ['cleaning'], function() {
+gulp.task('copy', ['cleaning', 'imagemin'], function() {
   gulp.src([
     './src/**/*.html', 
     './src/**/scripts.js',
     './src/**/style.css',
-    './src/media/*',
-    './src/*.png',
-    './src/*.jpg',
-    './src/*.svg',
   ])
   .pipe(gulp.dest('./dist'));
 });
